@@ -8,14 +8,14 @@
         body { font-family: 'Noto Nastaliq Urdu', Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
        .splash { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0d4b2a, #1a5c2e); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; text-align: center; padding: 20px; box-sizing: border-box; }
        .splash h1 { font-size: 2.2em; margin-bottom: 15px; }
-       .splash.bismillah { font-size: 1.8em; margin-bottom: 20px; color: #d4af37; }
-       .splash.durood { font-size: 1.1em; margin-bottom: 25px; line-height: 1.8; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; }
+       .splash .bismillah { font-size: 1.8em; margin-bottom: 20px; color: #d4af37; }
+       .splash .durood { font-size: 1.1em; margin-bottom: 25px; line-height: 1.8; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; }
        .splash button { background: #d4af37; color: #0d4b2a; border: none; padding: 15px 40px; font-size: 1.3em; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 10px; }
        .main { display: none; padding: 20px; max-width: 900px; margin: auto; }
        .header { text-align: center; background: #0d4b2a; color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; position: relative; }
-       .header.bismillah-top { font-size: 1.5em; color: #d4af37; margin-bottom: 10px; }
-       .header.ilham { position: absolute; left: 15px; top: 15px; font-size: 0.8em; color: #d4af37; opacity: 0.8; }
-       .header.credit { font-size: 0.9em; color: #d4af37; margin-top: 10px; }
+       .header .bismillah-top { font-size: 1.5em; color: #d4af37; margin-bottom: 10px; }
+       .header .ilham { position: absolute; left: 15px; top: 15px; font-size: 0.8em; color: #d4af37; opacity: 0.8; }
+       .header .credit { font-size: 0.9em; color: #d4af37; margin-top: 10px; }
        .search-box { width: 100%; padding: 15px; font-size: 1.1em; border: 2px solid #0d4b2a; border-radius: 8px; margin-bottom: 20px; box-sizing: border-box; }
        .search-btn { background: #0d4b2a; color: white; border: none; padding: 12px 25px; font-size: 1.1em; border-radius: 8px; cursor: pointer; margin-bottom: 20px; }
        .hadees { background: white; padding: 20px; margin-bottom: 15px; border-radius: 10px; border-right: 5px solid #d4af37; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative; }
@@ -24,7 +24,6 @@
        .translation { margin: 10px 0; }
        .hadees-info { color: #666; font-size: 0.9em; margin-top: 10px; border-top: 1px dashed #ccc; padding-top: 10px; }
        .speak-btn { background: #d4af37; color: #0d4b2a; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; margin-top: 10px; }
-       .hidden { display: none; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -68,7 +67,10 @@
                 <div class="hadees-title">3. بہترین عمل</div>
                 <div class="arabic">أَفْضَلُ الأَعْمَالِ الصَّلاَةُ لِوَقْتِهَا</div>
                 <div class="translation">سب سے افضل عمل وقت پر نماز پڑھنا ہے۔</div>
-                <div            <div class="hadees" data-text="اللہ کی رضا والد کی رضا میں ہے۔ سنن ترمذی حدیث نمبر 1899">
+                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 527 | راوی: حضرت عبداللہ بن مسعود رضی اللہ عنہ</div>
+                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
+            </div>
+            <div class="hadees" data-text="اللہ کی رضا والد کی رضا میں ہے۔ سنن ترمذی حدیث نمبر 1899">
                 <div class="hadees-title">4. والدین کا حق</div>
                 <div class="arabic">رِضَا اللَّهِ فِي رِضَا الْوَالِدِ</div>
                 <div class="translation">اللہ کی رضا والد کی رضا میں ہے۔</div>
@@ -247,124 +249,4 @@
                 <div class="hadees-title">29. راستے کا حق</div>
                 <div class="arabic">إِيَّاكُمْ وَالْجُلُوسَ عَلَى الطُّرُقَاتِ</div>
                 <div class="translation">راستوں پہ بیٹھنے سے بچو۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 2465 | راوی: حضرت ابو سعید خدری رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="اسلام یہ ہے کہ تو گواہی دے کہ اللہ کے سوا کوئی معبود نہیں۔ صحیح مسلم حدیث نمبر 8">
-                <div class="hadees-title">30. حدیث جبریل</div>
-                <div class="arabic">الإِسْلاَمُ أَنْ تَشْهَدَ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ</div>
-                <div class="translation">اسلام یہ ہے کہ تو گواہی دے کہ اللہ کے سوا کوئی معبود نہیں۔</div>
-                <div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 8 | راوی: حضرت عمر رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="کوئی مومن نہیں ہو سکتا جب تک اپنے بھائی کے لیے وہی پسند نہ کرے جو اپنے لیے پسند کرتا ہے۔ صحیح بخاری حدیث نمبر 13">
-                <div class="hadees-title">31. محبت کا معیار</div>
-                <div class="arabic">لاَ يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ</div>
-                <div class="translation">کوئی مومن نہیں ہو سکتا جب تک اپنے بھائی کے لیے وہی پسند نہ کرے جو اپنے لیے پسند کرتا ہے۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 13 | راوی: حضرت انس رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="زمین والوں پر رحم کرو، آسمان والا تم پر رحم کرے گا۔ سنن ترمذی حدیث نمبر 1924">
-                <div class="hadees-title">32. زمین پر رحم</div>
-                <div class="arabic">ارْحَمُوا مَنْ فِي الأَرْضِ</div>
-                <div class="translation">زمین والوں پر رحم کرو، آسمان والا تم پر رحم کرے گا۔</div>
-                <div class="hadees-info">حوالہ: سنن ترمذی، حدیث نمبر 1924 | راوی: حضرت عبداللہ بن عمرو رضی اللہ عنہما</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="خبردار! جھوٹی بات اور جھوٹی گواہی۔ صحیح بخاری حدیث نمبر 2654">
-                <div class="hadees-title">33. جھوٹی گواہی</div>
-                <div class="arabic">أَلاَ وَقَوْلُ الزُّورِ</div>
-                <div class="translation">خبردار! جھوٹی بات اور جھوٹی گواہی۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 2654 | راوی: حضرت ابو بکرہ رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="اللہ نرم ہے اور ہر کام میں نرمی کو پسند کرتا ہے۔ صحیح بخاری حدیث نمبر 6024">
-                <div class="hadees-title">34. نرمی</div>
-                <div class="arabic">إِنَّ اللَّهَ رَفِيقٌ يُحِبُّ الرِّفْقَ</div>
-                <div class="translation">اللہ نرم ہے اور ہر کام میں نرمی کو پسند کرتا ہے۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 6024 | راوی: حضرت عائشہ رضی اللہ عنہا</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="مسلمان کا مسلمان پر 5 حق ہیں: سلام، بیمار پرسی، جنازہ، دعوت، چھینک کا جواب۔ صحیح بخاری حدیث نمبر 1240">
-                <div class="hadees-title">35. بیمار پرسی</div>
-                <div class="arabic">حَقُّ الْمُسْلِمِ عَلَى الْمُسْلِمِ خَمْسٌ</div>
-                <div class="translation">مسلمان کا مسلمان پر 5 حق ہیں: سلام، بیمار پرسی، جنازہ، دعوت، چھینک کا جواب۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 1240 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="سب سے بڑے گناہ: شرک اور والدین کی نافرمانی۔ صحیح بخاری حدیث نمبر 2654">
-                <div class="hadees-title">36. والدین کی نافرمانی</div>
-                <div class="arabic">الإِشْرَاكُ بِاللَّهِ، وَعُقُوقُ الْوَالِدَيْنِ</div>
-                <div class="translation">سب سے بڑے گناہ: شرک اور والدین کی نافرمانی۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 2654 | راوی: حضرت ابو بکرہ رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="منافق کی 3 نشانیاں: جھوٹ بولے، وعدہ خلافی کرے، امانت میں خیانت کرے۔ صحیح بخاری حدیث نمبر 33">
-                <div class="hadees-title">37. منافق کی نشانیاں</div>
-                <div class="arabic">آيَةُ الْمُنَافِقِ ثَلاَثٌ</div>
-                <div class="translation">منافق کی 3 نشانیاں: جھوٹ بولے، وعدہ خلافی کرے، امانت میں خیانت کرے۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 33 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="ظلم سے بچو، ظلم قیامت کے دن اندھیریاں ہوں گی۔ صحیح مسلم حدیث نمبر 2578">
-                <div class="hadees-title">38. ظلم سے بچو</div>
-                <div class="arabic">اتَّقُوا الظُّلْمَ فَإِنَّ الظُّلْمَ ظُلُمَاتٌ</div>
-                <div class="translation">ظلم سے بچو، ظلم قیامت کے دن اندھیریاں ہوں گی۔</div>
-                <div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 2578 | راوی: حضرت جابر رضی اللہ عنہ</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button> class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 527 | راوی: حضرت عبداللہ بن مسعود رضی اللہ عنہ</div>
-                
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="اللہ کی رضا والد کی رضا میں ہے۔ سنن ترمذی حدیث نمبر 1899">
-                <div class="hadees-title">4. والدین کا حق</div>
-                <div class="arabic">رِضَا اللَّهِ فِي رِضَا الْوَالِدِ</div>
-                <div class="translation">اللہ کی رضا والد کی رضا میں ہے۔</div>
-                <div class="hadees-info">حوالہ: سنن ترمذی، حدیث نمبر 1899 | راوی: حضرت عبداللہ بن عمرو رضی اللہ عنہما</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-            <div class="hadees" data-text="جبریل مجھے پڑوسی کے بارے میں وصیت کرتے رہے۔ صحیح بخاری حدیث نمبر 6014">
-                <div class="hadees-title">5. پڑوسی کا حق</div>
-                <div class="arabic">مَا زَالَ جِبْرِيلُ يُوصِينِي بِالْجَارِ</div>
-                <div class="translation">جبریل مجھے پڑوسی کے بارے میں وصیت کرتے رہے۔</div>
-                <div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 6014 | راوی: حضرت عائشہ رضی اللہ عنہا</div>
-                <button class="speak-btn" onclick="speakHadees(this)">🔊 سنیں</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        function enterSite() {
-            document.getElementById('splashScreen').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-            var msg = new SpeechSynthesisUtterance('السلام علیکم! صحیح بخاری سرچ انجن میں خوش آمدید');
-            msg.lang = 'ur-PK';
-            msg.rate = 0.8;
-            window.speechSynthesis.speak(msg);
-        }
-        function speakHadees(btn) {
-            var hadeesDiv = btn.closest('.hadees');
-            var textToSpeak = hadeesDiv.getAttribute('data-text');
-            var msg = new SpeechSynthesisUtterance(textToSpeak);
-            msg.lang = 'ur-PK';
-            msg.rate = 0.8;
-            window.speechSynthesis.speak(msg);
-        }
-        function searchHadees() {
-            var input = document.getElementById('searchBox').value.toLowerCase();
-            var hadees = document.getElementsByClassName('hadees');
-            for (var i = 0; i < hadees.length; i++) {
-                var text = hadees[i].innerText.toLowerCase();
-                if (text.indexOf(input) > -1) {
-                    hadees[i].style.display = 'block';
-                } else {
-                    hadees[i].style.display = 'none';
-                }
-            }
-        }
-        document.getElementById('searchBox').addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                searchHadees();
-            }
-        });
-    </script>
-</body>
-                  </html>
+                <div class="hadees-info">حوالہ: صح
